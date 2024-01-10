@@ -1,4 +1,6 @@
 "use client";
+
+import "./styles.css";
 import React, { useState } from "react";
 
 const Header = () => {

@@ -4,5 +4,12 @@ import Intro from "@/components/home/Intro";
 import Projects from "@/components/projects/Projects";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <Intro />
+      <About />
+      <Projects />
+      <Contact />
+    </>
+  );
 }

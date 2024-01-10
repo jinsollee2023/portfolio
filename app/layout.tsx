@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  weight: ["200", "400", "700"],
+  weight: "300",
 });
 
 export default function RootLayout({
