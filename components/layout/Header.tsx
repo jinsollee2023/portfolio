@@ -7,7 +7,7 @@ const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   return (
     <>
-      <div className="container max-w-full mx-auto px-[10%] py-6">
+      <div className="fixed top-0 left-0 w-full mx-auto px-[10%] py-6 bg-white">
         <nav className="flex items-center justify-between">
           <div>J I N S O L</div>
           <div className="hidden h-8 md:flex md:space-x-8">
@@ -52,7 +52,7 @@ const Header = () => {
         id="menu"
         className={`${
           isHamburgerOpen ? "" : "hidden"
-        } absolute w-full py-6 flex flex-col space-y-6 text-lg bg-white text-black uppercase `}
+        } absolute w-full py-6 flex flex-col space-y-6 text-lg bg-white text-black uppercase`}
       >
         <div className="text-center	cursor-pointer hover:text-pink-400">
           Home
