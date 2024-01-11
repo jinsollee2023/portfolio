@@ -72,7 +72,7 @@ const EmailForm = () => {
   });
 
   return (
-    <form onSubmit={onSubmit} ref={formRef} className="w-[70%] p-6 ">
+    <form onSubmit={onSubmit} ref={formRef} className="p-6 md:w-[70%]">
       <div className="mb-6 lg:flex lg:justify-between">
         <label className="pt-2">Name</label>
         <div className="flex flex-col lg:w-[40%]">
@@ -113,9 +113,11 @@ const EmailForm = () => {
           </p>
         )}
       </div>
-      <button type="submit" className="px-4 py-2 border rounded-md">
-        Send Email
-      </button>
+      <div className="flex justify-center md:justify-start">
+        <button type="submit" className="px-4 py-2 border rounded-md">
+          Send Email
+        </button>
+      </div>
     </form>
   );
 };

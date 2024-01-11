@@ -41,5 +41,3 @@ const Intro = () => {
 };
 
 export default Intro;
-
-// className="container max-w-full mx-auto px-[10%] py-6

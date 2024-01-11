@@ -10,21 +10,28 @@ const Contact = () => {
       <div className="md:flex">
         <EmailForm />
         <span className="w-1 h-30 border-l mx-6 hidden md:inline-block"></span>
-        <div className="w-[30%] p-6 ">
-          <label>Email</label>
-          <p>jins2ol@naver.com</p>
+        <span className="w-full h-1 border-b my-6 inline-block md:hidden"></span>
+        <div className="p-6 md:w-[30%]">
+          <div className="text-center md:text-left">
+            <label>Email</label>
+            <p>jins2ol@naver.com</p>
+          </div>
 
-          <label>Address</label>
-          <p>Donjack-gu, Seoul</p>
+          <div className="text-center md:text-left">
+            <label>Address</label>
+            <p>Donjack-gu, Seoul</p>
+          </div>
 
-          <label>Social</label>
-          <div>
-            <button>
-              <FaGithub />
-            </button>
-            <button>
-              <AiFillInstagram />
-            </button>
+          <div className="text-center md:text-left">
+            <label>Social</label>
+            <div>
+              <button>
+                <FaGithub />
+              </button>
+              <button>
+                <AiFillInstagram />
+              </button>
+            </div>
           </div>
         </div>
       </div>
