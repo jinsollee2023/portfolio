@@ -1,30 +1,72 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import "./styles.css";
 import React, { useState } from "react";
+import { scrollToSection } from "@/utils/commonFunc";
 
 const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // const scrollToSection = (sectionId: string) => {
+  //   const section = document.getElementById(sectionId);
+  //   const navbarHeight = 80;
+
+  //   if (pathname !== "/") {
+  //     router.push(`/#${sectionId}`);
+  //   }
+
+  //   if (section) {
+  //     window.scrollTo({
+  //       top: section.offsetTop - navbarHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+
+  const menuClickHandler = (sectionId: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+    }
+
+    if (isHamburgerOpen) {
+      setIsHamburgerOpen(false);
+    }
+
+    scrollToSection(sectionId);
+  };
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full mx-auto px-[10%] py-6 bg-white">
         <nav className="flex items-center justify-between">
-          <div>J I N S O L</div>
+          <div
+            onClick={() => menuClickHandler("intro")}
+            className="cursor-pointer"
+          >
+            J I N S O L
+          </div>
           <div className="hidden h-8 md:flex md:space-x-8">
             <div className="group">
-              <a href="#">Home</a>
+              <button onClick={() => menuClickHandler("intro")}>Home</button>
               <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
             <div className="group">
-              <a href="#">About</a>
+              <button onClick={() => menuClickHandler("about")}>About</button>
               <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
             <div className="group">
-              <a href="#">Projects</a>
+              <button onClick={() => menuClickHandler("projects")}>
+                Projects
+              </button>
               <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
             <div className="group">
-              <a href="#">Contact</a>
+              <button onClick={() => menuClickHandler("contact")}>
+                Contact
+              </button>
               <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
           </div>
@@ -52,18 +94,30 @@ const Header = () => {
         id="menu"
         className={`${
           isHamburgerOpen ? "" : "hidden"
-        } absolute w-full py-6 flex flex-col space-y-6 text-lg bg-white text-black uppercase`}
+        } fixed top-16 w-full py-6 flex flex-col space-y-6 text-lg bg-white text-black uppercase md:hidden`}
       >
-        <div className="text-center	cursor-pointer hover:text-pink-400">
+        <div
+          onClick={() => menuClickHandler("intro")}
+          className="text-center	cursor-pointer hover:text-pink-400"
+        >
           Home
         </div>
-        <div className="text-center cursor-pointer hover:text-pink-400">
+        <div
+          onClick={() => menuClickHandler("about")}
+          className="text-center cursor-pointer hover:text-pink-400"
+        >
           About
         </div>
-        <div className="text-center cursor-pointer hover:text-pink-400">
+        <div
+          onClick={() => menuClickHandler("projects")}
+          className="text-center cursor-pointer hover:text-pink-400"
+        >
           Projects
         </div>
-        <div className="text-center cursor-pointer hover:text-pink-400">
+        <div
+          onClick={() => menuClickHandler("contact")}
+          className="text-center cursor-pointer hover:text-pink-400"
+        >
           Contact
         </div>
       </div>

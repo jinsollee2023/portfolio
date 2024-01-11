@@ -5,7 +5,7 @@ import { AiFillInstagram } from "react-icons/ai";
 
 const Contact = () => {
   return (
-    <section className="mx-auto px-[10%] py-24">
+    <section id="contact" className="mx-auto px-[10%] py-20">
       <h2 className="text-center mb-24 text-3xl font-black">Contact</h2>
       <div className="md:flex">
         <EmailForm />

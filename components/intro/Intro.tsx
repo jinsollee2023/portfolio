@@ -15,7 +15,7 @@ const Intro = () => {
   };
 
   return (
-    <main className="h-[75vh] mt-20 bg-blue-100 flex items-center">
+    <main id="intro" className="h-[75vh] mt-20 bg-blue-100 flex items-center">
       <div className="mx-auto py-12">
         <h1 className="text-8xl font-black text-center">JINSOL</h1>
         <p className="mt-6 text-xl text-center">

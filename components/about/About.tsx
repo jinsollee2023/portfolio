@@ -5,8 +5,8 @@ import "./styles.css";
 
 const About = () => {
   return (
-    <section id="a" className="px-[10%] py-24">
-      <h2 className="text-center mb-24 text-3xl font-black">About</h2>
+    <section id="about" className="px-[10%] py-20">
+      <h2 className="text-center mb-20 text-3xl font-black">About</h2>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <div className="flex justify-center md:w-[30%]">
           <Image src={profile} alt="프로필 이미지" width={300} height={400} />

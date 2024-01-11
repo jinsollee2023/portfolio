@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import emailjs from "@emailjs/browser";
+import "./styles.css";
 
 const EmailForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -75,28 +76,18 @@ const EmailForm = () => {
     <form onSubmit={onSubmit} ref={formRef} className="p-6 md:w-[70%]">
       <div className="mb-6 lg:flex lg:justify-between">
         <label className="pt-2">Name</label>
-        <div className="flex flex-col lg:w-[40%]">
-          <input
-            {...register("user_name")}
-            className="h-10 border rounded-md "
-          />
+        <div className="email-form-input-box">
+          <input {...register("user_name")} className="email-form-input" />
           {errors.user_name && (
-            <p className="mt-2 text-center text-red-500">
-              {errors.user_name.message}
-            </p>
+            <p className="error-message">{errors.user_name.message}</p>
           )}
         </div>
 
         <label className="pt-2">Email</label>
-        <div className="flex flex-col lg:w-[40%]">
-          <input
-            {...register("user_email")}
-            className="h-10 border rounded-md "
-          />
+        <div className="email-form-input-box">
+          <input {...register("user_email")} className="email-form-input" />
           {errors.user_email && (
-            <p className="mt-2 text-center text-red-500">
-              {errors.user_email.message}
-            </p>
+            <p className="error-message">{errors.user_email.message}</p>
           )}
         </div>
       </div>
@@ -108,9 +99,7 @@ const EmailForm = () => {
           className="h-48 border rounded-md resize-none"
         />
         {errors.message && (
-          <p className="mt-2 text-center text-red-500">
-            {errors.message.message}
-          </p>
+          <p className="error-message">{errors.message.message}</p>
         )}
       </div>
       <div className="flex justify-center md:justify-start">
