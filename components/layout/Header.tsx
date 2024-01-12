@@ -10,22 +10,6 @@ const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  // const scrollToSection = (sectionId: string) => {
-  //   const section = document.getElementById(sectionId);
-  //   const navbarHeight = 80;
-
-  //   if (pathname !== "/") {
-  //     router.push(`/#${sectionId}`);
-  //   }
-
-  //   if (section) {
-  //     window.scrollTo({
-  //       top: section.offsetTop - navbarHeight,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
   const menuClickHandler = (sectionId: string) => {
     if (pathname !== "/") {
       router.push(`/#${sectionId}`);
@@ -40,7 +24,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full mx-auto px-[10%] py-6 bg-white">
+      <div className="fixed top-0 left-0 w-full mx-auto px-[10%] py-6 bg-white shadow-sm">
         <nav className="flex items-center justify-between">
           <div
             onClick={() => menuClickHandler("intro")}

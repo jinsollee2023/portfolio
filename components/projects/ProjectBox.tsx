@@ -7,11 +7,11 @@ import React from "react";
 
 interface ProjectBoxProps {
   project: IProject;
-  key: number;
 }
 
-const ProjectBox = ({ project, key }: ProjectBoxProps) => {
-  const { images, title, projectPeriod, headCount, techStacks, link } = project;
+const ProjectBox = ({ project }: ProjectBoxProps) => {
+  const { id, images, title, projectPeriod, headCount, techStacks, link } =
+    project;
   const mainImage = images[0];
   const router = useRouter();
 
@@ -21,14 +21,11 @@ const ProjectBox = ({ project, key }: ProjectBoxProps) => {
     } else if (linkType === "website") {
       window.open(link.website, "_blank");
     } else if (linkType === "readMore") {
-      router.push(`/projects/${title}`);
+      router.push(`/projects/${id}`);
     }
   };
   return (
-    <article
-      key={key}
-      className="p-6 rounded-2xl bg-white md:flex md:space-x-4"
-    >
+    <article key={id} className="p-6 rounded-2xl bg-white md:flex md:space-x-4">
       <Image
         src={mainImage}
         alt="프로젝트 대표 이미지"
@@ -37,11 +34,11 @@ const ProjectBox = ({ project, key }: ProjectBoxProps) => {
         className="w-1/2 rounded-md"
       />
       <div className="w-1/2">
-        <p>{title}</p>
+        <p className="text-4xl font-normal">{title}</p>
         <p>{projectPeriod}</p>
         <p>{headCount === 1 ? "개인 프로젝트" : headCount}</p>
-        {techStacks.map((stack) => (
-          <span>{stack}</span>
+        {techStacks.map((stack, idx) => (
+          <span key={idx}>{stack}</span>
         ))}
         <button onClick={() => clickHandler("github")}>gitHub</button>
         <button onClick={() => clickHandler("website")}>website</button>

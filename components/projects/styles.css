@@ -1,0 +1,7 @@
+.read-more-box {
+  @apply p-6 space-y-4;
+}
+
+.read-more-title {
+  @apply text-3xl font-semibold;
+}

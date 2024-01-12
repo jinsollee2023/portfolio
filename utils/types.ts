@@ -1,4 +1,5 @@
 export interface IProject {
+  id: string;
   title: string;
   projectPeriod: string;
   headCount: number;
@@ -10,8 +11,9 @@ export interface IProject {
   summary: string;
   images: string[];
   mainFunction: string[];
-  myFunction: {
-    title: string[];
+  myFunctions: {
+    title: string;
+    desc: string[];
   }[];
   description: string;
 }

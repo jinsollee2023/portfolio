@@ -7,8 +7,8 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-[10%] space-y-6 bg-blue-100">
       <h2 className="text-center mb-16 text-3xl font-black">Projects</h2>
-      {projects.map((project: IProject, idx: number) => {
-        return <ProjectBox project={project} key={idx} />;
+      {projects.map((project: IProject) => {
+        return <ProjectBox project={project} />;
       })}
     </section>
   );
