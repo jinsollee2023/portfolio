@@ -1,7 +1,10 @@
 .read-more-box {
-  @apply p-6 space-y-4;
+  @apply px-[10%] p-6 space-y-4;
 }
 
 .read-more-title {
-  @apply text-3xl font-semibold;
+  @apply text-3xl font-normal;
+}
+
+.stack-text {
 }

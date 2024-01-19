@@ -3,12 +3,16 @@ export const projects = [
     id: "protfolio-website",
     title: "포트폴리오 웹사이트",
     projectPeriod: "2024.01.08 ~ 2024.01.17",
-    headCount: 1,
+    headCount: "1명",
     techStacks: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
     link: { gitHub: "https://github.com/jinsollee2023/portfolio", website: "" },
     summary:
       "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from vacation rental.",
-    images: [],
+    images: [
+      require("@/public/images/workwave1.png"),
+      require("@/public/images/workwave1.png"),
+      require("@/public/images/workwave1.png"),
+    ],
     mainFunction: ["간단한 자기소개", "프로젝트 경험", "간편 메일 전송"],
     myFunctions: [
       { title: "기능1", desc: ["테스트11111", "테스트22222", "테스트33333"] },
@@ -21,14 +25,14 @@ export const projects = [
     id: "work-wave",
     title: "워크웨이브",
     projectPeriod: "2023.08.16 ~ 2023.09.18",
-    headCount: 5,
+    headCount: "5명",
     techStacks: [
       "Typescript",
       "REACT",
       "zustand",
+      "Tanstack Query",
+      "styled-components",
       "supabase",
-      "Tanstack react-query",
-      "Styled-components",
     ],
     link: {
       gitHub: "https://github.com/jinsollee2023/nabacam-final-project",
@@ -36,7 +40,14 @@ export const projects = [
     },
     summary:
       "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from vacation rental.",
-    images: [require("@/public/images/workwave1.png")],
+    images: [
+      require("@/public/images/workwave1.png"),
+      require("@/public/images/workwave2.png"),
+      require("@/public/images/workwave3.png"),
+      require("@/public/images/workwave4.png"),
+      require("@/public/images/workwave5.png"),
+      require("@/public/images/workwave6.png"),
+    ],
     mainFunction: [
       "프리랜서/프로젝트 탐색",
       "프로젝트 관리 도구",

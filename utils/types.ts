@@ -2,7 +2,7 @@ export interface IProject {
   id: string;
   title: string;
   projectPeriod: string;
-  headCount: number;
+  headCount: string;
   techStacks: string[];
   link: {
     gitHub: string;

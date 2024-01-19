@@ -1,5 +1,5 @@
 .profile-title {
-  @apply font-semibold text-base md:text-lg lg:text-xl;
+  @apply font-normal text-base md:text-lg lg:text-xl;
 }
 
 .profile-desc {
