@@ -4,15 +4,15 @@
 @import "tailwindcss/utilities";
 
 .main-text {
-  @apply text-5xl font-semibold;
+  @apply text-2xl sm:text-4xl md:text-5xl font-semibold;
 }
 
 .typed-text {
-  @apply text-yellow-500;
+  @apply text-yellow-400;
 }
 
 .cursor {
-  @apply inline-block bg-white ml-1 w-1 h-12 animate-blink;
+  @apply inline-block bg-white ml-1 w-1 h-8 sm:h-9 md:h-12 animate-blink;
 }
 
 .cursor.typing {

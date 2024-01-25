@@ -78,31 +78,31 @@ const Header = () => {
         id="menu"
         className={`${
           isHamburgerOpen ? "" : "hidden"
-        } fixed top-16 w-full py-6 flex flex-col space-y-6 text-lg bg-white text-black uppercase md:hidden`}
+        } fixed top-[72px] w-full py-10 flex flex-col space-y-8 text-lg bg-white text-black border-t-2 shadow-md md:hidden`}
       >
         <div
           onClick={() => menuClickHandler("intro")}
-          className="text-center	cursor-pointer hover:text-pink-400"
+          className="text-center	cursor-pointer hover:text-blue-400"
         >
-          Home
+          HOME
         </div>
         <div
           onClick={() => menuClickHandler("about")}
-          className="text-center cursor-pointer hover:text-pink-400"
+          className="text-center cursor-pointer hover:text-blue-400"
         >
-          About
+          ABOUT
         </div>
         <div
           onClick={() => menuClickHandler("projects")}
-          className="text-center cursor-pointer hover:text-pink-400"
+          className="text-center cursor-pointer hover:text-blue-400"
         >
-          Projects
+          PROJECTS
         </div>
         <div
           onClick={() => menuClickHandler("contact")}
-          className="text-center cursor-pointer hover:text-pink-400"
+          className="text-center cursor-pointer hover:text-blue-400"
         >
-          Contact
+          CONTACT
         </div>
       </div>
     </>

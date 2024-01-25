@@ -71,7 +71,7 @@ const Intro = () => {
   return (
     <main
       id="intro"
-      className="h-[75vh] mt-[72px] mx-auto px-[10%] py-20 bg-blue-100 md:mt-20"
+      className="h-2/3 mt-[72px] mx-auto px-[10%] py-20 bg-blue-100 sm:h-[75vh] md:mt-20"
     >
       <div className="py-10 space-y-4 flex flex-col items-center">
         <h1 className="main-text">안녕하세요!</h1>
@@ -80,21 +80,21 @@ const Intro = () => {
           <span className="cursor" ref={cursorRef}></span>
         </div>
         <h1 className="main-text">이진솔입니다.</h1>
-      </div>
-      <div>
-        <div className="flex justify-center space-x-4">
-          <button
-            className="px-4 py-2 border rounded-2xl border-white	bg-white font-normal"
-            onClick={goToContact}
-          >
-            연락하기
-          </button>
-          <button
-            className="px-4 py-2 border rounded-2xl border-white	bg-white font-normal"
-            onClick={goToResume}
-          >
-            이력서 바로가기
-          </button>
+        <div>
+          <div className="flex justify-center mt-4 space-x-4">
+            <button
+              className="border rounded-2xl px-3 py-1 sm:px-4 sm:py-2  border-white	bg-white font-normal"
+              onClick={goToContact}
+            >
+              연락하기
+            </button>
+            <button
+              className="px-4 py-2 border rounded-2xl border-white	bg-white font-normal"
+              onClick={goToResume}
+            >
+              이력서 바로가기
+            </button>
+          </div>
         </div>
       </div>
     </main>

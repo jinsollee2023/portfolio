@@ -1,11 +1,13 @@
 "use client";
 
+import { notoSansKr } from "@/app/layout";
 import { IProject } from "@/utils/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { IoIosLink } from "react-icons/io";
+import "./styles.css";
 
 interface ProjectBoxProps {
   project: IProject;
@@ -34,28 +36,30 @@ const ProjectBox = ({ project }: ProjectBoxProps) => {
           alt="프로젝트 대표 이미지"
           width={400}
           height={300}
-          className="rounded-md w-full"
+          className="rounded-md w-full mb-4 md:mb-0"
         />
       </div>
-      <div className="flex flex-col md:w-1/2 ">
-        <p className="text-center text-3xl font-500 md:text-start">{title}</p>
-        <p className="text-center md:text-start">
-          {projectPeriod} ({headCount})
-        </p>
-        <div className="space-x-2 leading-8 text-center md:text-start">
-          {techStacks.map((stack, idx) => (
-            <span
-              className="mr-1 p-1 rounded-md bg-gray-300 text-xs font-semibold"
-              key={idx}
-            >
-              {stack}
-            </span>
-          ))}
+      <div className="md:w-1/2">
+        <div className="h-[80%]">
+          <p
+            className={`${notoSansKr.className} text-center font-500 text-xl sm:text-3xl  md:text-start`}
+          >
+            {title}
+          </p>
+          <p className="text-sm text-center sm:text-lg md:text-start">
+            {projectPeriod} ({headCount})
+          </p>
+          <div className="my-2 flex flex-wrap justify-center md:justify-start">
+            {techStacks.map((stack, idx) => (
+              <span className="stack-text" key={idx}>
+                {stack}
+              </span>
+            ))}
+          </div>
         </div>
-        <div></div>
         <div className="mt-auto space-x-2 flex justify-center md:justify-start">
           <button
-            className="px-12 py-2 border rounded-3xl"
+            className="px-8 py-2 sm:px-12 sm:py-2 border rounded-3xl"
             onClick={() => clickHandler("readMore")}
           >
             자세히보기

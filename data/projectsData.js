@@ -7,7 +7,7 @@ export const projects = [
     techStacks: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
     link: { gitHub: "https://github.com/jinsollee2023/portfolio", website: "" },
     summary:
-      "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from vacation rental.",
+      "포트폴리오 용도로 제작한 웹사이트로 현재 보고 있는 바로 이 웹사이트에 해당합니다. nextJS를 통해 웹사이트의 성능을 향상시키기 위해 노력하였으며, 모바일 뷰를 고려해 Tailwind CSS를 활용하여 반응형 디자인을 쉽게 구현하였습니다. NextJs, Tailwind CSS 등 새로운 기술을 학습할 수 있는 좋은 경험이었습니다.",
     images: [
       require("@/public/images/workwave1.png"),
       require("@/public/images/workwave1.png"),
@@ -39,7 +39,7 @@ export const projects = [
       website: "https://work-wave-sage.vercel.app/",
     },
     summary:
-      "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from vacation rental.",
+      "클라이언트와 프리랜서 간의 원활한 협업을 지원하는 다목적 프리랜서 플랫폼입니다. 프로젝트 초기에 코딩 컨벤션을 세밀하게 설정하고 주 1회 코드 리뷰를 통해 불필요한 코드 최소화, 함수 분할 등의 코드 최적화를 하였습니다. 그 결과 Lighthouse 성능 측정시 평균 90점대의 점수를 받을 수 있었습니다.",
     images: [
       require("@/public/images/workwave1.png"),
       require("@/public/images/workwave2.png"),

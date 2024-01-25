@@ -7,4 +7,5 @@
 }
 
 .stack-text {
+  @apply mr-1 mb-1 px-2 py-1 rounded-md bg-gray-200 text-xs font-semibold;
 }
