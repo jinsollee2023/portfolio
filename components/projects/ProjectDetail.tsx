@@ -7,7 +7,7 @@ import "./styles.css";
 import ImageBox from "./ImageBox";
 import { FaGithub } from "react-icons/fa";
 import { IoIosLink } from "react-icons/io";
-import { notoSansKr } from "@/app/layout";
+import { notoSansKr } from "@/app/font";
 
 const ProjectDetail = () => {
   const pathname = usePathname();

@@ -1,6 +1,5 @@
 "use client";
 
-import { notoSansKr } from "@/app/layout";
 import { IProject } from "@/utils/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -8,6 +7,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { IoIosLink } from "react-icons/io";
 import "./styles.css";
+import { notoSansKr } from "@/app/font";
 
 interface ProjectBoxProps {
   project: IProject;
