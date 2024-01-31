@@ -2,10 +2,13 @@ export const projects = [
   {
     id: "protfolio-website",
     title: "포트폴리오 웹사이트",
-    projectPeriod: "2024.01.08 ~ 2024.01.17",
+    projectPeriod: "2024.01.08 ~ 2024.01.31",
     headCount: "1명",
     techStacks: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
-    link: { gitHub: "https://github.com/jinsollee2023/portfolio", website: "" },
+    link: {
+      gitHub: "https://github.com/jinsollee2023/portfolio",
+      website: "https://jinsol-porifolio.vercel.app/",
+    },
     summary:
       "포트폴리오 용도로 제작한 웹사이트로 현재 보고 있는 바로 이 웹사이트에 해당합니다. nextJS를 통해 웹사이트의 성능을 향상시키기 위해 노력하였으며, 모바일 뷰를 고려해 Tailwind CSS를 활용하여 반응형 디자인을 쉽게 구현하였습니다. NextJs, Tailwind CSS 등 새로운 기술을 학습할 수 있는 좋은 경험이었습니다.",
     images: [
