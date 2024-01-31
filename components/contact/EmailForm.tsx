@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import emailjs from "@emailjs/browser";
+import _ from "lodash";
 import "./styles.css";
+import toast from "react-hot-toast";
 
 const EmailForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -38,8 +40,6 @@ const EmailForm = () => {
   });
 
   const onSubmit = handleSubmit((data: EmailFormSchema) => {
-    console.log(data);
-
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -51,63 +51,75 @@ const EmailForm = () => {
         (result) => {
           console.log(result.text);
           reset();
-          // toast.success("성공적으로 전송되었습니다!", { // 성공시 팝업 라이브러리
-          //   style: {
-          //     maxWidth: "1000px",
-          //     width: "300px",
-          //     fontSize: "20px",
-          //   },
-          // });
+          toast.success("성공적으로 전송되었습니다!", {
+            style: {
+              width: "300px",
+              padding: "16px",
+              fontWeight: 400,
+            },
+          });
         },
         (error) => {
           console.log(error.text);
-          // toast.error("전송에 실패하였습니다. 다시 시도해주시기 바랍니다.", {
-          //   style: {                       //실패시 팝업 라이브러리
-          //     maxWidth: "1000px",
-          //     width: "530px",
-          //     fontSize: "20px",
-          //   },
-          // });
+          toast.error("전송에 실패하였습니다. 다시 시도해주시기 바랍니다.", {
+            style: {
+              width: "300px",
+              padding: "16px",
+              fontWeight: 400,
+            },
+          });
         }
       );
   });
+  const debouncedOnSubmit = useCallback(
+    _.debounce((values: any) => {
+      onSubmit(values);
+    }, 500),
+    []
+  );
 
   return (
-    <form onSubmit={onSubmit} ref={formRef} className="p-6 md:w-[70%]">
-      <div className="mb-6 lg:flex lg:justify-between">
-        <label className="pt-2">Name</label>
-        <div className="email-form-input-box">
-          <input {...register("user_name")} className="email-form-input" />
-          {errors.user_name && (
-            <p className="error-message">{errors.user_name.message}</p>
-          )}
+    <>
+      <form
+        onSubmit={handleSubmit((values) => debouncedOnSubmit(values))}
+        ref={formRef}
+        className="p-6 md:w-[70%]"
+      >
+        <div className="mb-6 lg:flex lg:justify-between">
+          <label className="pt-2">Name</label>
+          <div className="email-form-input-box">
+            <input {...register("user_name")} className="email-form-input" />
+            {errors.user_name && (
+              <p className="error-message">{errors.user_name.message}</p>
+            )}
+          </div>
+
+          <label className="pt-2">Email</label>
+          <div className="email-form-input-box">
+            <input {...register("user_email")} className="email-form-input" />
+            {errors.user_email && (
+              <p className="error-message">{errors.user_email.message}</p>
+            )}
+          </div>
         </div>
 
-        <label className="pt-2">Email</label>
-        <div className="email-form-input-box">
-          <input {...register("user_email")} className="email-form-input" />
-          {errors.user_email && (
-            <p className="error-message">{errors.user_email.message}</p>
+        <div className="mb-6 flex flex-col">
+          <label className="mb-2">Message</label>
+          <textarea
+            {...register("message")}
+            className="h-48 p-2 border rounded-md resize-none"
+          />
+          {errors.message && (
+            <p className="error-message">{errors.message.message}</p>
           )}
         </div>
-      </div>
-
-      <div className="mb-6 flex flex-col">
-        <label className="mb-2">Message</label>
-        <textarea
-          {...register("message")}
-          className="h-48 border rounded-md resize-none"
-        />
-        {errors.message && (
-          <p className="error-message">{errors.message.message}</p>
-        )}
-      </div>
-      <div className="flex justify-center md:justify-start">
-        <button type="submit" className="px-4 py-2 border rounded-md">
-          Send Email
-        </button>
-      </div>
-    </form>
+        <div className="flex justify-center md:justify-start">
+          <button type="submit" className="px-4 py-2 border rounded-md">
+            Send Email
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

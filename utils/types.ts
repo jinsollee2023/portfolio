@@ -15,5 +15,8 @@ export interface IProject {
     title: string;
     desc: string[];
   }[];
-  description: string;
+  techDecision: {
+    title: string;
+    desc: string;
+  }[];
 }

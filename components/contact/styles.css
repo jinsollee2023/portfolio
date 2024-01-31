@@ -3,7 +3,7 @@
 }
 
 .email-form-input {
-  @apply h-10 border rounded-md;
+  @apply h-10 p-2 border rounded-md;
 }
 
 .error-message {

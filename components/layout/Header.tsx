@@ -28,30 +28,26 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div
             onClick={() => menuClickHandler("intro")}
-            className="cursor-pointer"
+            className="cursor-pointer font-normal"
           >
             J I N S O L
           </div>
           <div className="hidden h-8 md:flex md:space-x-8">
-            <div className="group">
+            <div className="group hover:font-normal">
               <button onClick={() => menuClickHandler("intro")}>Home</button>
-              <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
-            <div className="group">
+            <div className="group hover:font-normal">
               <button onClick={() => menuClickHandler("about")}>About</button>
-              <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
-            <div className="group">
+            <div className="group hover:font-normal">
               <button onClick={() => menuClickHandler("projects")}>
                 Projects
               </button>
-              <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
-            <div className="group">
+            <div className="group hover:font-normal">
               <button onClick={() => menuClickHandler("contact")}>
                 Contact
               </button>
-              <div className="mx-2 group-hover:border-b group-hover:border-white"></div>
             </div>
           </div>
           <div className="md:hidden">

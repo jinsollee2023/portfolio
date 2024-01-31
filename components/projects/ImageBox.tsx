@@ -33,11 +33,15 @@ const ImageBox = ({ images }: ImageBoxProps) => {
         />
       </div>
       <div className="h-10 flex items-center justify-center space-x-2">
-        <IoIosArrowBack onClick={() => imageIdxHandler("prev")} />
+        <button>
+          <IoIosArrowBack onClick={() => imageIdxHandler("prev")} />
+        </button>
         <span>
           {imageIdx + 1}/{images.length}
         </span>
-        <IoIosArrowForward onClick={() => imageIdxHandler("next")} />
+        <button>
+          <IoIosArrowForward onClick={() => imageIdxHandler("next")} />{" "}
+        </button>
       </div>
     </div>
   );

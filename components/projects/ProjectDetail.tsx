@@ -20,10 +20,9 @@ const ProjectDetail = () => {
     images,
     mainFunction,
     myFunctions,
-    description,
+    techDecision,
     techStacks,
   } = project!;
-  //  py-12
   return (
     <>
       <div className="read-more-box mt-[73px] bg-blue-50 md:mt-20">
@@ -63,18 +62,25 @@ const ProjectDetail = () => {
         <p className="read-more-title">MY FUNCTION</p>
         {myFunctions.map((func, index) => {
           return (
-            <div key={index}>
-              <p className="text-xl font-normal">{func.title}</p>
+            <div key={index} className="space-y-2">
+              <ul className="text-xl font-normal">{func.title}</ul>
               {func.desc.map((item, subIndex) => (
-                <p key={subIndex}>{item}</p>
+                <li key={subIndex}>{item}</li>
               ))}
             </div>
           );
         })}
       </div>
       <div className="read-more-box">
-        <p className="read-more-title">DESCRIPTION</p>
-        <p>{description}</p>
+        <p className="read-more-title">TECH DECISION</p>
+        {techDecision.map((tech, index) => {
+          return (
+            <div key={index} className="space-y-2">
+              <ul className="text-xl font-normal">{tech.title}</ul>
+              <li>{tech.desc}</li>
+            </div>
+          );
+        })}
       </div>
     </>
   );

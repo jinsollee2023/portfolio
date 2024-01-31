@@ -14,8 +14,16 @@ interface ProjectBoxProps {
 }
 
 const ProjectBox = ({ project }: ProjectBoxProps) => {
-  const { id, images, title, projectPeriod, headCount, techStacks, link } =
-    project;
+  const {
+    id,
+    images,
+    title,
+    projectPeriod,
+    headCount,
+    techStacks,
+    link,
+    summary,
+  } = project;
   const mainImage = images[0];
   const router = useRouter();
 
@@ -39,27 +47,31 @@ const ProjectBox = ({ project }: ProjectBoxProps) => {
           className="rounded-md w-full mb-4 md:mb-0"
         />
       </div>
-      <div className="md:w-1/2">
-        <div className="h-[80%]">
+      <div className="space-y-4 md:w-1/2">
+        <div>
           <p
-            className={`${notoSansKr.className} text-center font-500 text-xl sm:text-3xl  md:text-start`}
+            className={`${notoSansKr.className} text-center font-normal text-xl sm:text-2xl  md:text-start`}
           >
             {title}
           </p>
-          <p className="text-sm text-center sm:text-lg md:text-start">
+          <p className="text-sm text-center sm:text-md md:text-start">
             {projectPeriod} ({headCount})
           </p>
-          <div className="my-2 flex flex-wrap justify-center md:justify-start">
-            {techStacks.map((stack, idx) => (
-              <span className="stack-text" key={idx}>
-                {stack}
-              </span>
-            ))}
-          </div>
         </div>
+        <div className="my-2 flex flex-wrap justify-center md:justify-start">
+          {techStacks.map((stack, idx) => (
+            <span className="stack-text" key={idx}>
+              {stack}
+            </span>
+          ))}
+        </div>
+        <div className="hidden sm:block">
+          <p>{summary}</p>
+        </div>
+
         <div className="mt-auto space-x-2 flex justify-center md:justify-start">
           <button
-            className="px-8 py-2 sm:px-12 sm:py-2 border rounded-3xl"
+            className="px-4 py-2 sm:px-12 sm:py-2 border rounded-3xl"
             onClick={() => clickHandler("readMore")}
           >
             자세히보기
@@ -83,4 +95,3 @@ const ProjectBox = ({ project }: ProjectBoxProps) => {
 };
 
 export default ProjectBox;
-// className="mr-1 p-1 rounded-md bg-gray-300"
