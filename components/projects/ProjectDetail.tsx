@@ -58,8 +58,12 @@ const ProjectDetail = () => {
             <div className="space-y-1">
               <p className={`${notoSansKr.className} `}>기술 스택</p>
               <div className="flex flex-wrap">
-                {techStacks.map((stack) => {
-                  return <span className="stack-text">{stack}</span>;
+                {techStacks.map((stack, idx) => {
+                  return (
+                    <span key={idx} className="stack-text">
+                      {stack}
+                    </span>
+                  );
                 })}
               </div>
             </div>
