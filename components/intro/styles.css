@@ -1,0 +1,44 @@
+/* file2.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.main-text {
+  @apply text-2xl sm:text-4xl md:text-5xl font-semibold;
+}
+
+.typed-text {
+  @apply text-yellow-400;
+}
+
+.cursor {
+  @apply inline-block bg-white ml-1 w-1 h-8 sm:h-9 md:h-12 animate-blink;
+}
+
+.cursor.typing {
+  animation: none;
+}
+
+@layer utilities {
+  @keyframes blink {
+    0% {
+      background-color: #ccc;
+    }
+    49% {
+      background-color: #ccc;
+    }
+    50% {
+      background-color: transparent;
+    }
+    99% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: #ccc;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+}

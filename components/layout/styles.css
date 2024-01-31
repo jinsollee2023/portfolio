@@ -1,0 +1,29 @@
+.hamburger {
+  @apply cursor-pointer w-6 h-6 transition-all duration-100 relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  @apply absolute w-6 h-[2px] top-1 left-0 bg-black transform rotate-0 transition-all duration-100;
+}
+
+.hamburger-middle {
+  @apply transform translate-y-[7px];
+}
+
+.hamburger-bottom {
+  @apply transform translate-y-[14px];
+}
+
+.open.hamburger-top {
+  @apply transform rotate-45 translate-y-[6px] translate-x-[6px];
+}
+
+.open.hamburger-middle {
+  @apply hidden;
+}
+
+.open.hamburger-bottom {
+  @apply transform -rotate-45 translate-y-[6px] translate-x-[6px];
+}

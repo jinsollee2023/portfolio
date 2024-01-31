@@ -1,0 +1,11 @@
+.email-form-input-box {
+  @apply flex flex-col lg:w-[40%];
+}
+
+.email-form-input {
+  @apply h-10 p-2 border rounded-md;
+}
+
+.error-message {
+  @apply mt-2 text-center text-red-500;
+}

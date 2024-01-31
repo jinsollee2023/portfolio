@@ -1,0 +1,7 @@
+.profile-title {
+  @apply font-normal text-base md:text-lg lg:text-xl;
+}
+
+.profile-desc {
+  @apply text-sm md:text-sm lg:text-base;
+}

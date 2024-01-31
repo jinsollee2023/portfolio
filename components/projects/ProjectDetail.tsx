@@ -1,0 +1,98 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import React from "react";
+import { projects } from "../../data/projectsData";
+import "./styles.css";
+import ImageBox from "./ImageBox";
+import { FaGithub } from "react-icons/fa";
+import { IoIosLink } from "react-icons/io";
+import { notoSansKr } from "@/app/layout";
+
+const ProjectDetail = () => {
+  const pathname = usePathname();
+  const prefix = "/projects/";
+  const projectSlug = pathname.substring(prefix.length);
+  const project = projects.find((project) => project.id === projectSlug);
+  const {
+    title,
+    summary,
+    images,
+    mainFunction,
+    myFunctions,
+    techDecision,
+    techStacks,
+    link,
+  } = project!;
+
+  const clickHandler = (linkType: string) => {
+    if (linkType === "github") {
+      window.open(link.gitHub, "_blank");
+    } else if (linkType === "website") {
+      window.open(link.website, "_blank");
+    }
+  };
+  return (
+    <>
+      <div className="read-more-box mt-[73px] bg-blue-50 md:mt-20">
+        <p className="read-more-title">SUMMARY</p>
+        <div className="lg:flex lg:space-x-6">
+          <ImageBox images={images} />
+          <div className="space-y-3 lg:w-[60%]">
+            <div className="flex items-center space-x-3">
+              <p className={`${notoSansKr.className} text-2xl`}>{title}</p>
+              <div className="space-x-2 flex items-center">
+                <button onClick={() => clickHandler("website")}>
+                  <IoIosLink />
+                </button>
+                <button onClick={() => clickHandler("github")}>
+                  <FaGithub />
+                </button>
+              </div>
+            </div>
+            <p>{summary}</p>
+            <div className="space-y-1">
+              <p className={`${notoSansKr.className} `}>주요 기능</p>
+              <p>{mainFunction}</p>
+            </div>
+            <div className="space-y-1">
+              <p className={`${notoSansKr.className} `}>기술 스택</p>
+              <div className="flex flex-wrap">
+                {techStacks.map((stack) => {
+                  return <span className="stack-text">{stack}</span>;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="read-more-box">
+        <p className="read-more-title">MY FUNCTION</p>
+        {myFunctions.map((func, index) => {
+          return (
+            <div key={index} className="space-y-2">
+              <ul className="text-xl font-normal">{func.title}</ul>
+              {func.desc.map((item, subIndex) => (
+                <li key={subIndex}>{item}</li>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+      <div className="read-more-box">
+        <p className="read-more-title">TECH DECISION</p>
+        {techDecision.map((tech, index) => {
+          return (
+            <div key={index} className="space-y-2">
+              <ul className="text-xl font-normal">{tech.title}</ul>
+              <li>{tech.desc}</li>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+export default ProjectDetail;
