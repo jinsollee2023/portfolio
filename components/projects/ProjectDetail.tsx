@@ -22,7 +22,16 @@ const ProjectDetail = () => {
     myFunctions,
     techDecision,
     techStacks,
+    link,
   } = project!;
+
+  const clickHandler = (linkType: string) => {
+    if (linkType === "github") {
+      window.open(link.gitHub, "_blank");
+    } else if (linkType === "website") {
+      window.open(link.website, "_blank");
+    }
+  };
   return (
     <>
       <div className="read-more-box mt-[73px] bg-blue-50 md:mt-20">
@@ -33,10 +42,10 @@ const ProjectDetail = () => {
             <div className="flex items-center space-x-3">
               <p className={`${notoSansKr.className} text-2xl`}>{title}</p>
               <div className="space-x-2 flex items-center">
-                <button>
+                <button onClick={() => clickHandler("website")}>
                   <IoIosLink />
                 </button>
-                <button>
+                <button onClick={() => clickHandler("github")}>
                   <FaGithub />
                 </button>
               </div>
