@@ -10,7 +10,7 @@ export interface IProject {
   };
   summary: string;
   images: string[];
-  mainFunction: string;
+  mainFunction: string[];
   myFunctions: {
     title: string;
     desc: string[];

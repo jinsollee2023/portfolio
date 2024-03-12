@@ -63,7 +63,7 @@ const Intro = () => {
       setTimeout(erase, erasingDelay);
     } else {
       cursorRef?.current?.classList.remove("typing");
-      textArrayIndex = (textArrayIndex + 0.5) % textArray.length;
+      textArrayIndex = (textArrayIndex + 1) % textArray.length;
       setTimeout(type, typingDelay + 1100);
     }
   };
@@ -71,7 +71,7 @@ const Intro = () => {
   return (
     <main
       id="intro"
-      className="h-2/3 mt-[72px] mx-auto px-[10%] py-20 bg-blue-100 sm:h-[75vh] md:mt-20"
+      className="h-2/3 mt-[72px] mx-auto px-[5%] md:px-[15%] py-20 bg-blue-100 sm:h-[75vh] md:mt-20"
     >
       <div className="py-10 space-y-4 flex flex-col items-center">
         <h1 className="main-text">안녕하세요!</h1>

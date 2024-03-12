@@ -1,4 +1,3 @@
-import { Noto_Sans_KR, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "./head";
 import Header from "@/components/layout/Header";
