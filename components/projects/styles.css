@@ -1,5 +1,5 @@
 .read-more-box {
-  @apply px-[15%] p-10 space-y-4;
+  @apply px-[5%] md:px-[15%] p-10 space-y-4;
 }
 
 .read-more-title {
@@ -8,4 +8,23 @@
 
 .stack-text {
   @apply mr-1 mb-1 px-2 py-1 rounded-md bg-gray-200 text-xs font-semibold;
+}
+
+.skeleton {
+  background-color: #a5a5a5;
+  animation: skeleton-animation 1s infinite linear;
+}
+
+@keyframes skeleton-animation {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import profile from "@/public/images/profile.jpg";
+import profile from "@/public/images/profile.jpg";
 import "./styles.css";
 
 const About = () => {
   return (
-    <section id="about" className="px-[15%] py-20">
+    <section id="about" className="px-[5%] md:px-[15%] py-20">
       <h2 className="text-center mb-20 text-3xl font-semibold">About</h2>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <div className="flex justify-center md:w-[30%]">

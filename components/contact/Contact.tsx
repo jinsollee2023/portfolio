@@ -14,7 +14,7 @@ const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="mx-auto px-[15%] py-20">
+    <section id="contact" className="mx-auto px-[5%] md:px-[15%] py-20">
       <h2 className="text-center mb-24 text-3xl font-semibold">Contact</h2>
       <div className="md:flex">
         <EmailForm />

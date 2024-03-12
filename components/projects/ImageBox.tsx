@@ -1,5 +1,6 @@
 "use client";
 
+import "./styles.css";
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -10,6 +11,7 @@ interface ImageBoxProps {
 
 const ImageBox = ({ images }: ImageBoxProps) => {
   const [imageIdx, setImageIdx] = useState(0);
+  const [onLoadImage, setOnLoadImage] = useState(false);
   const imageIdxHandler = (buttonName: string) => {
     let newIndex;
 
@@ -21,15 +23,21 @@ const ImageBox = ({ images }: ImageBoxProps) => {
 
     setImageIdx(newIndex as number);
   };
+
   return (
-    <div className="lg:w-[40%] flex flex-col items-center justify-center">
-      <div>
+    <div className="lg:w-1/2 flex flex-col items-center">
+      <div className={`w-full h-[250px] ${onLoadImage ? "skeleton" : ""}`}>
         <Image
           src={images[imageIdx]}
           alt="프로젝트 이미지"
-          width={400}
+          width={500}
           height={300}
-          className="w-[500px] h-[280px]"
+          className={`w-full h-[250px] object-cover ${
+            onLoadImage ? "hidden" : "block"
+          }`}
+          onLoad={() => {
+            setOnLoadImage(false);
+          }}
         />
       </div>
       <div className="h-10 flex items-center justify-center space-x-2">

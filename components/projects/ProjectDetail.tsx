@@ -50,18 +50,14 @@ const ProjectDetail = () => {
                 </button>
               </div>
             </div>
-            <p>{summary}</p>
-            <div className="space-y-1">
-              <p className={`${notoSansKr.className} `}>주요 기능</p>
-              <p>{mainFunction}</p>
-            </div>
-            <div className="space-y-1">
-              <p className={`${notoSansKr.className} `}>기술 스택</p>
+            <p className="pb-2">{summary}</p>
+            <div className="space-y-2">
+              <p className={`${notoSansKr.className}`}>주요 기능</p>
               <div className="flex flex-wrap">
-                {techStacks.map((stack, idx) => {
+                {mainFunction.map((func, idx) => {
                   return (
                     <span key={idx} className="stack-text">
-                      {stack}
+                      {func}
                     </span>
                   );
                 })}
