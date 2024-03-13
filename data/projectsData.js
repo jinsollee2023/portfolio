@@ -15,8 +15,8 @@ export const projects = [
       "Firebase",
     ],
     link: {
-      gitHub: "https://github.com/jinsollee2023/community-project",
-      website: "https://work-wave-sage.vercel.app/",
+      gitHub: "https://github.com/jinsollee2023/commerce-project",
+      website: "https://commerce-project-js.vercel.app",
     },
     summary:
       "팀스파르타의 콘텐츠팀 체험형 인턴 업무로 수강생들에게 제공될 커머스 프로젝트의 데모페이지입니다. 정해진 라이브러리와 기술을 구현하는 과정에서 Pre-Fethcing, Compound component, 테스트 자동화 등 다양한 성능 최적화 및 안전성 향상에 대해 학습했습니다.",
@@ -115,7 +115,7 @@ export const projects = [
     ],
     link: {
       gitHub: "https://github.com/jinsollee2023/community-project",
-      website: "https://work-wave-sage.vercel.app/",
+      website: "https://community-project-js.vercel.app/login",
     },
     summary:
       "팀스파르타의 콘텐츠팀 체험형 인턴 업무로 수강생들에게 제공될 커뮤니티 프로젝트의 데모페이지입니다. 정해진 라이브러리와 기술을 구현하는 과정에서 Debounce, Lazy Loading, Optimistic Update 등 다양한 성능 최적화 방법에 대해 학습할 수 있었습니다.",
