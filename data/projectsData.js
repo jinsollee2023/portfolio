@@ -60,7 +60,7 @@ export const projects = [
           "useInfiniteQuery, useInView를 사용하여 무한스크롤 기능을 통해 게시물 데이터 로딩 속도 단축",
           "상품 등록시 상품 이미지는 이미지 최적화 라이브러리를 사용하여 파일 크기를 압축한 뒤 Firebase Storage에 저장",
           "Firebase의 다중 쿼리 지원 불가 문제로 카테고리 정렬과 동시에 상품 최신순 정렬에 어려움 -> 데이터 저장시 category_createdAt이라는 키를 만들어 startAt() 메서드를 통해 카테고리 정렬 후 endAt() 메서드를 통해 최신순 정렬",
-          "상품 상세 조회에 데이터 prefetching을 적용하여 상세 페이지 데이터를 미리 받아오고, 첫 화면 렌더링 속도를 개선",
+          "상품 상세 조회에 데이터 prefetching을 적용하여 상세 페이지 데이터를 미리 받아오도록 하여 화면 렌더링 속도를 개선",
         ],
       },
       {
