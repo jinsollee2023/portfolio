@@ -1,9 +1,9 @@
 .read-more-box {
-  @apply px-[5%] md:px-[15%] p-10 space-y-4;
+  @apply px-[5%] md:px-[15%] p-10 space-y-6;
 }
 
 .read-more-title {
-  @apply text-3xl font-normal;
+  @apply text-3xl font-semibold;
 }
 
 .stack-text {

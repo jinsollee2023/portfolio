@@ -71,10 +71,12 @@ const ProjectDetail = () => {
         <p className="read-more-title">MY FUNCTION</p>
         {myFunctions.map((func, index) => {
           return (
-            <div key={index} className="space-y-2">
-              <ul className="text-xl font-normal">{func.title}</ul>
+            <div key={index} className="space-y-3">
+              <ul className="text-xl font-bold">{func.title}</ul>
               {func.desc.map((item, subIndex) => (
-                <li key={subIndex}>{item}</li>
+                <li key={subIndex} className="font-[400]">
+                  {item}
+                </li>
               ))}
             </div>
           );
@@ -84,9 +86,9 @@ const ProjectDetail = () => {
         <p className="read-more-title">TECH DECISION</p>
         {techDecision.map((tech, index) => {
           return (
-            <div key={index} className="space-y-2">
-              <ul className="text-xl font-normal">{tech.title}</ul>
-              <li>{tech.desc}</li>
+            <div key={index} className="space-y-3">
+              <ul className="text-xl font-bold">{tech.title}</ul>
+              <li className="font-[400]">{tech.desc}</li>
             </div>
           );
         })}
