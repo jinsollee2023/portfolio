@@ -29,9 +29,13 @@ const ImageBox = ({ images }: ImageBoxProps) => {
 
   const handleImageLoad = (index: number) => {
     const updatedLoadedImages = [...loadedImages];
-    updatedLoadedImages[index] = true; // 해당 이미지의 로드 상태를 true로 설정
+    updatedLoadedImages[index] = true;
     setLoadedImages(updatedLoadedImages);
   };
+
+  useEffect(() => {
+    handleImageLoad(0);
+  }, []);
 
   return (
     <div className="lg:w-1/2 flex flex-col items-center">
