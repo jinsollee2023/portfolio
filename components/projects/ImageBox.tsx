@@ -2,7 +2,7 @@
 
 import "./styles.css";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 interface ImageBoxProps {
@@ -11,7 +11,10 @@ interface ImageBoxProps {
 
 const ImageBox = ({ images }: ImageBoxProps) => {
   const [imageIdx, setImageIdx] = useState(0);
-  const [onLoadImage, setOnLoadImage] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(
+    Array(images.length).fill(false)
+  );
+
   const imageIdxHandler = (buttonName: string) => {
     let newIndex;
 
@@ -24,19 +27,29 @@ const ImageBox = ({ images }: ImageBoxProps) => {
     setImageIdx(newIndex as number);
   };
 
+  const handleImageLoad = (index: number) => {
+    const updatedLoadedImages = [...loadedImages];
+    updatedLoadedImages[index] = true; // 해당 이미지의 로드 상태를 true로 설정
+    setLoadedImages(updatedLoadedImages);
+  };
+
   return (
     <div className="lg:w-1/2 flex flex-col items-center">
-      <div className={`w-full h-[250px] ${onLoadImage ? "skeleton" : ""}`}>
+      <div
+        className={`w-full h-[250px] ${
+          loadedImages[imageIdx] ? "" : "skeleton"
+        }`}
+      >
         <Image
           src={images[imageIdx]}
           alt="프로젝트 이미지"
           width={500}
           height={300}
           className={`w-full h-[250px] object-cover ${
-            onLoadImage ? "hidden" : "block"
+            loadedImages[imageIdx] ? "block" : "hidden"
           }`}
           onLoad={() => {
-            setOnLoadImage(false);
+            handleImageLoad(imageIdx);
           }}
         />
       </div>
